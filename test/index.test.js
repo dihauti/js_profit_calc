@@ -79,12 +79,26 @@ const operations = [
         qnt: 1500,
     },
     {
-        id: 12,
+      id: 12,
+      type: "DIV",
+      ticker: "GAZP",
+      price: 1,
+      qnt: 10000,
+    },
+    {
+        id: 13,
         type: "SELL",
         ticker: "GAZP",
         price: 210,
         qnt: 12000,
     },
+    {
+        id: 14,
+        type: "TAX",
+        ticker: null,
+        price: 1,
+        qnt: 1000
+    }
 ]
 
 test(
@@ -92,8 +106,8 @@ test(
     () => {
         expect(main(operations)).toEqual(
             {
-                absProfit: 13500,
-                portfolio: { AFKS: -8000, GAZP: 15000, SBER: 6500 }
+                absProfit: 22500,
+                portfolio: { AFKS: -8000, GAZP: 25000, SBER: 6500 }
             }
         );
     });
